@@ -1,0 +1,447 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #5d6d7e; /* Light Gray 5d6d7e */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  background-color: #2c3e50; /* Dark Blue-Gray */
+  color: white;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2em;
+  text-align: left;
+}
+
+.header,
+.header .insert {
+  margin-left: auto; /* Ensure both elements are aligned to the right */
+}
+.search {
+  margin-left: 400px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Add some space between search and insert button */
+}
+
+.search-input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  font-size: 1em;
+}
+
+.search-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+.user-management a {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  background-color: #333; /* Orange background color */
+  padding: 10px 20px; /* Padding around the link */
+  margin-left: 320px;
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.user-management a:hover {
+  background-color: rgb(81, 80, 80); /* Darker orange on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.insert a {
+  color: white;
+  text-decoration: none;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.insert a:hover {
+  background-color: rgb(81, 80, 80);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .hamburger {
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #7a7878;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  top: 40px;
+  right: 0;
+  z-index: 1;
+  min-width: 160px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.logout-form .logout-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout-form .logout-button:hover {
+  background-color: #db3434;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Features */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f9f9f9 transparent;
+}
+
+@media (max-width: 768px) {
+  .dropdown-content {
+    right: auto;
+    left: 0;
+  }
+}
+
+/* Focus styles for better accessibility */
+.hamburger:focus,
+.logout-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Fade-in effect for dropdown */
+.dropdown-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Close button inside the dropdown */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Product Container Styles */
+/* Style for the product container */
+.product-container {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for cards */
+  justify-content: center; /* Center the cards */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for the container */
+}
+
+/* Style for individual product cards */
+.product-card {
+  background-color: #fff; /* White card background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Ensure content stays inside the card */
+  width: 250px; /* Fixed width for cards */
+  text-align: center; /* Center-align content */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out content inside the card */
+  padding: 10px;
+}
+
+/* Style for product images */
+.product-image {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-bottom: 1px solid #ddd; /* Divider below image */
+  margin-bottom: 10px;
+}
+
+/* Style for product name */
+.product-name {
+  font-size: 1.2rem; /* Slightly larger font */
+  font-weight: bold;
+  color: #333; /* Dark text color */
+  margin: 10px 0;
+}
+
+/* Style for product description */
+.product-description {
+  font-size: 0.9rem; /* Smaller font size */
+  color: #555; /* Gray text color */
+  margin: 0 10px; /* Add spacing */
+  height: 30px; /* Fixed height for uniformity */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+/* Style for product price */
+.product-price {
+  font-size: 1rem; /* Medium font size */
+  font-weight: bold;
+  color: #27ae60; /* Green color for price */
+  margin-bottom: 10px;
+}
+
+/* Container for buttons */
+.product-card-buttons {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  align-items: center; /* Align buttons vertically */
+  margin-top: 10px;
+}
+
+/* Add-to-cart button */
+#Add_To_Card_button,
+#Add_To_Card_button_customer {
+  background: linear-gradient(to right, #007bff, #0056b3); /* Blue button */
+  color: white; /* White text */
+  padding: 10px 75px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 5px;
+}
+
+#Add_To_Card_button:hover {
+  background: linear-gradient(to right, #0056b3, #007bff);
+}
+#Remove_from_Card_button {
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+  color: white; /* White text */
+  padding: 10px 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 5px;
+}
+#Remove_from_Card_button:hover {
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+}
+
+/* Trash button inside the card */
+.button-container {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+}
+
+.icon-form {
+  margin: 0; /* Remove margin for forms */
+}
+
+.trash-icon,
+.edit-icon {
+  background: none;
+  border: none; /* No border for buttons */
+  color: #000000; /* Default color */
+  padding: 10px; /* Adjust padding for better spacing */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.trash-icon:hover {
+  color: #f20909; /* Color on hover for trash */
+}
+
+.edit-icon:hover {
+  color: #09f218; /* Color on hover for edit */
+}
+
+/* insert Form Style  */
+.my-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Form heading */
+.insert_form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.data {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+#button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+#insert_button:hover {
+  background-color: #218838;
+}
+.icon-button {
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  color: #db1616; /* Default color */
+  font-size: 1.5em; /* Icon size */
+}
+
+.icon-button:hover {
+  color: red; /* Change color on hover */
+}
+
+.success-message {
+  color: green;
+}
+.error-message::placeholder {
+  color: red;
+  font-size: 1em;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  align-items: center;
+  gap: 15px; /* Space between inputs */
+  padding: 20px;
+  background: linear-gradient(to bottom, #cfe2f3, #a2b8d7);
+  border-radius: 20px; /* Rounded form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  max-width: 350px;
+  margin: 5% auto 0 auto; /* Center horizontally and add top margin */
+}
+.user-info input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.user-info input[type="submit"] {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #007bff, #0056b3); /* Gradient button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-info input[type="submit"]:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  background: linear-gradient(to right, #0056b3, #003f7f);
+}

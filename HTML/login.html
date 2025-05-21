@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/> -->
+    <link rel="stylesheet" href="/project/CSS/login.css" />
+
+    <title>Signup/Login Form with Toggle button using HTML and CSS - Coding Torque</title>
+</head>
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+
+        <div class="signup">
+            <form  id="signup-form" method="post">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" id="username" name="username" placeholder="User name" />
+                <input type="text" id="signupEmail" name="signupEmail" placeholder="Email" />
+                <input type="password" id="signupPassword" name="signupPassword" placeholder="Password" />
+                <input class="button" type="submit" id="Signup" name="Signup" value="Sign up" />
+            </form>
+        </div>
+
+        <div class="login" >                    
+            <form id="login-form" method="post">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="text" id="loginEmail" name="loginEmail" placeholder="Enter email" />
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter password" />
+                <input class="button" type="submit" id="login" name="login" value="login" />
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="index.js"></script> -->
+
+<script src="../JavaScript/index.js"></script>
+
+</body>
+</html>
